@@ -188,13 +188,14 @@ const Manager = () => {
                             <h2 className='text-2xl font-bold py-4'>Your Passwords</h2>
                             {passwordArray.length === 0 && <div>No passwords to show</div>}
                             {passwordArray.length !== 0 &&
-                                <table className="table-fixed w-full rounded-md overflow-hidden mb-3">
+                                <div className="w-full overflow-x-auto rounded-md">
+                                <table className="table-fixed w-full min-w-0 rounded-md overflow-hidden mb-3">
                                     <thead className='bg-green-800 text-white'>
                                         <tr>
-                                            <th className='w-[40%] py-2'>Site</th>
+                                            <th className='w-[30%] py-2 md:w-[40%]'>Site</th>
                                             <th className='w-[20%] py-2'>Username</th>
                                             <th className='w-[25%] py-2'>Password</th>
-                                            <th className='w-[15%] py-2'>Actions</th>
+                                            <th className='w-[25%] py-2 md:w-[15%]'>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody className='bg-green-100'>
@@ -202,8 +203,8 @@ const Manager = () => {
                                             return <tr key={index}>
                                                 <td className='text-center py-2 border border-white'>
                                                     <div className='flex min-w-0 items-center justify-center gap-1'>
-                                                        <a className='break-all' href={item.site} target='_blank'>{item.site}</a>
-                                                        <div className='lordIconCopy size-7 cursor-pointer' onClick={() => copyText(item.site)}>
+                                                        <a className='min-w-0 flex-1 wrap-break-word' href={item.site} target='_blank' rel='noreferrer'>{item.site}</a>
+                                                        <div className='lordIconCopy size-7 shrink-0 cursor-pointer' onClick={() => copyText(item.site)}>
                                                             <span title='copy'>
                                                                 <lord-icon className={"cursor-pointer w-5"}
                                                                     style={{ " width": "25px", "height": "25px", "paddingTop": "3px", "paddingLeft": "3px" }}
@@ -216,9 +217,9 @@ const Manager = () => {
                                                     </div>
                                                 </td>
                                                 <td className='text-center py-2 border border-white'>
-                                                    <div className='flex items-center justify-center gap-1'>
-                                                        <span>{item.username}</span>
-                                                        <div className='lordIconCopy size-7 cursor-pointer' onClick={() => copyText(item.username)}>
+                                                    <div className='flex min-w-0 items-center justify-center gap-1'>
+                                                        <span className='min-w-0 flex-1 wrap-anywhere'>{item.username}</span>
+                                                        <div className='lordIconCopy size-7 shrink-0 cursor-pointer' onClick={() => copyText(item.username)}>
                                                             <span title='copy'>
                                                                 <lord-icon className={"cursor-pointer w-5"}
                                                                     style={{ " width": "25px", "height": "25px", "paddingTop": "3px", "paddingLeft": "3px" }}
@@ -231,9 +232,9 @@ const Manager = () => {
                                                     </div>
                                                 </td>
                                                 <td className='text-center py-2 border border-white'>
-                                                    <div className='flex items-center justify-center gap-1'>
-                                                        <span className='break-all'>{"*".repeat(item.password.length)}</span>
-                                                        <div className='lordIconCopy size-7 cursor-pointer' onClick={() => copyText(item.password)}>
+                                                    <div className='flex min-w-0 items-center justify-center gap-1'>
+                                                        <span className='min-w-0 flex-1 break-all'>{"*".repeat(item.password.length)}</span>
+                                                        <div className='lordIconCopy size-7 shrink-0 cursor-pointer' onClick={() => copyText(item.password)}>
                                                             <span title='copy'>
                                                                 <lord-icon className={"cursor-pointer w-5"}
                                                                     style={{ " width": "25px", "height": "25px", "paddingTop": "3px", "paddingLeft": "3px" }}
@@ -272,6 +273,7 @@ const Manager = () => {
 
                                     </tbody>
                                 </table>
+                                </div>
                             }
                         </div>
                     </div>
