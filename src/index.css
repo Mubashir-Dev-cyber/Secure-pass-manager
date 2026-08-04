@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@layer components {
+    .mycontainer {
+        @apply container px-40 py-16 mx-auto;
+    }
+}
+
+/* Hide the browser's native password reveal button; the app supplies its own. */
+.password-input::-ms-reveal,
+.password-input::-ms-clear {
+    display: none;
+}
+
+.password-input::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+}
