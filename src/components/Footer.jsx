@@ -7,7 +7,7 @@ const Footer = () => {
 
                 <span className='text-green-500'> &lt;</span>
                 <span>Pass</span>
-                <span className='text-green-500'>OP/&gt;</span>
+                <span className='text-green-500'>Nest/&gt;</span>
 
             </div>
             <div className='flex justify-center items-center'>

@@ -9,7 +9,7 @@ const Navbar = () => {
           
           <span className='text-green-500'> &lt;</span> 
           <span>Pass</span>
-          <span className='text-green-500'>OP/&gt;</span> 
+          <span className='text-green-500'>Nest/&gt;</span> 
          
         </div>
         
